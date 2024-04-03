@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+background-image: linear-gradient(160deg,#000428 0%, #004e92 100%);
+min-height: 100vh;
+        }
+        .container{
+            background-image: linear-gradient(160deg,#c33764 0%, #1d2671 100%);
+            display: block;
+            width: 520px;
+            height: 550px;
+            margin: 60px auto;
+            padding: 10px;
+            border-radius: 10px;
+            
+            
+        }
+
+        .title{
+            color: whitesmoke;
+            text-align: center;
+            background-image: linear-gradient(160deg,#c33764 0%, #1d2671 100%);
+            width: 50%;
+            margin: 30px  auto;
+            border-radius: 10px;
+            padding: 15px;
+            border: gold 1px solid;
+        }
+            
+        .inputs{
+            width: 80%;
+            height: 100px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 25px;
+            border: gold 1px solid;
+            font-size: large;
+            color: aliceblue;
+            text-align: center;
+            background-image: linear-gradient(160deg,#000428 0%, #004e92 100%);
+            
+        }
+        .btn{
+            width: 60%;
+            height: 50px;
+            display: block;
+            border: gold 1px solid;
+            margin: 40px auto;
+            border-radius: 25px;
+            font-size: large;
+            text-align: center;
+            color: gray;
+            background-image: linear-gradient(160deg,#000428 0%, #004e92 100%);
+            cursor: pointer;
+            
+        }
+
+        .ans{
+            width: 200px;
+            height: 50px;
+            padding-top: 20px;
+            border: gold 1px solid;
+            margin: 20px auto;
+            border-radius: 25px;
+            font-size: large;
+            color: gray;
+            text-align: center;
+            background-image: linear-gradient(160deg,#000428 0%, #004e92 100%);
+            
+        }
+
+        @media screen and (max-width: 768px);
+        {
+            .container{
+                width: 90%;
+            }
+
+        }
+        
+        
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="title">RECTANGLE-AREA CALCULATOR</h2>
+
+   <div class="container">
+
+    <input type="text" placeholder="ENTER LENGTH" class="inputs" id="num1" />
+
+    <input type="text" placeholder="ENTER WIDTH" class="inputs" id="num2"/>
+
+    <p class="ans" id="ans"></p>
+
+<button type="button" class="btn" onclick="calculate()">CALCULATE</button>
+
+<button type="button" class="btn" onclick="reset()">RESET</button>
+   </div>
+   <hr />
+   <hr />
+<script>
+      function calculate(){
+        const input1 = document.getElementById("num1");
+
+        const input2 = document.getElementById("num2");
+
+        const ansElement = document.getElementById("ans");
+
+        const sum = parseInt(input1.value) * parseInt(input2.value);
+
+        ansElement.innerHTML = `AREA : ${sum} m<sup>2</sup>`
+
+      }
+      function reset(){
+        const input1 = document.getElementById("num1");
+
+        const input2 = document.getElementById("num2");
+
+
+        const ansElement = document.getElementById("ans");
+
+        input1.value="";
+        input2.value="";
+
+
+        ansElement.innerText = ""
+      }
+
+</script>
+</body>
+</html>
